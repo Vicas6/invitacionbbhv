@@ -1,0 +1,267 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Nerko one', Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Esto evita cualquier scroll */
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Esto asegura que no haya scroll dentro de main */
+    position: relative; /* Asegúrate de que los hijos se posicionen en relación a este */
+}
+
+/* Asegúrate de que todas las imágenes se ajusten a sus contenedores */
+.container-background img {
+    max-width: 100%;
+    height: auto; /* Mantiene la proporción */
+}
+
+.container-images img {
+    max-width: 100%;
+    height: auto; /* Mantiene la proporción */
+}
+
+
+:root {
+    --color-texto: rgb(255, 255, 255);
+}
+
+.container-startButton {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.container-startButton img {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+#startButton {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 2px solid #498ecb;
+    background: linear-gradient(229deg, #6dc2fc, #357dbe);
+    box-shadow: -3px 4px 8px rgb(0 0 0 / 21%), 4px -4px 8px rgb(255 255 255 / 23%);
+    transition: all 0.1s ease;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Nerko one', Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6), -1px -1px 1px rgba(255, 255, 255, 0.3);
+    margin-top: 12rem;
+}
+
+#startButton:active {
+    box-shadow: 
+        -2px 2px 6px rgba(0, 0, 0, 0.5), /* Reducir la sombra al hacer clic */
+        1px -1px 4px rgba(255, 255, 255, 0.3);
+    transform: translateY(4px); /* Simular que se presiona hacia abajo */
+}
+
+.container-background img{
+    transition: transform 1s ease; /* Animación de transición */
+}
+
+.banderines, .parque {
+    position: absolute;
+    width: 100%;
+}
+
+.banderines{
+    top: -36rem;
+}
+
+.parque {
+    bottom: -18rem;
+    z-index: 1;
+}
+
+.globo, .globo2, .globo3, .globo4, .globo5, .globo6 {
+    position: absolute;
+}
+
+.globo {
+    width: 20%;
+    bottom: -9rem;
+    left: 10rem;
+}
+
+.globo2 {
+    width: 28%;
+    bottom: -15rem;
+    right: 2rem;
+    filter: hue-rotate(45deg);
+}
+
+.globo3 {
+    width: 32%;
+    bottom: -15rem;
+    right: -4rem;
+    filter: hue-rotate(18deg);
+} 
+.globo4 {
+    width: 24%;
+    bottom: -15rem;
+    left: -5rem;
+    filter: hue-rotate(-42deg);
+}
+.globo5 {
+    width: 20%;
+    bottom: -15rem;
+    right: -3rem;
+    filter: hue-rotate(-172deg);
+}
+.globo6 {
+    width: 28%;
+    bottom: -15rem;
+    left: -5rem;
+    filter: hue-rotate(138deg);
+}
+
+.container-text-main {
+    display: flex;
+    min-width: 28rem;
+    max-width: 42.5rem;
+    height: 22rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#dynamicText {
+    position: relative;
+    font-size: 3rem;
+    font-weight: 300;
+    max-width: 26ch;
+    color: var(--color-texto);
+    -webkit-text-stroke: 0.5px rgb(24, 24, 24);
+    z-index: 1;
+    top: 4rem;
+}
+
+#dynamicText.big-text {
+    font-size: 6rem;
+}
+
+.container-images {
+    display: flex;
+    position: relative;
+    max-width: 42.5rem;
+    height: 20rem;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.container-images img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: none;
+    margin-top: 4rem;
+}
+
+/* Fondos para cada estado */
+.fondo-1 {
+    background-color: #8be2fd;
+}
+
+.fondo-2 {
+    background-color: #8be2fd;
+}
+
+.fondo-3 {
+    background-color: #c4b0f9;
+}
+
+.fondo-4 {
+    background-color: #bbf375;
+}
+
+.fondo-5 {
+    background-color: #feef68;
+}
+
+.fondo-6 {
+    background-color: #f77f9b;
+}
+
+.fondo-7 {
+    background-color: #8be2fd;
+}
+
+.container-location {
+    position: absolute;
+    top: 24rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#locationButton {
+    display: none;
+    width: 16rem;
+    height: 4rem;
+    border-radius: 5px;
+    border: 2px solid #498ecb;
+    background: linear-gradient(229deg, #6dc2fc, #357dbe);
+    box-shadow: -3px 4px 8px rgb(0 0 0 / 21%), 4px -4px 8px rgb(255 255 255 / 23%);
+    transition: all 0.1s ease;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Nerko one', Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6), -1px -1px 1px rgba(255, 255, 255, 0.3);
+    z-index: 100;
+}
+
+#textFinal {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 300;
+    max-width: 26ch;
+    color: var(--color-texto);
+    -webkit-text-stroke: 0.5px rgb(24, 24, 24);
+    display: none;
+    bottom: 26rem;
+}
+
+.bounceIn {
+    animation: bounceIn 0.6s ease forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
